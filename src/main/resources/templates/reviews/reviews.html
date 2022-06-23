@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<link rel="stylesheet" th:src="@{js/script.js}"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
+	rel="stylesheet">
+
+<script type="text/javascript">
+	
+</script>
+
+</head>
+
+<style>
+.navtext {
+	font-family: 'Merriweather', serif;
+	font-size: 18px;
+	text-align: justify;
+	/* font-weight: bold;*/
+}
+
+.foottext {
+	font-family: 'Merriweather', serif;
+	font-size: 14px;
+	text-align: justify;
+	/* font-weight: bold;*/
+}
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info navtext">
+		<div class="container">
+			<div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarText" aria-controls="navbarText"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+			</div>
+			<div class="collapse navbar-collapse " id="navbarText">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link" th:href="@{/}">HOME
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/reviews}">Reviews</a></li>
+					
+				</ul>
+				<span class="navbar-text ml-auto navbar-dark">
+					<h1>LIBRARY</h1>
+				</span>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container my-3">
+		<div class="card ">
+			<div class="card-body">
+
+
+				<h3>Reviews</h3>
+
+				<br>
+				<br>
+
+              <div class="table-responsive">
+				<table id="author" class="table table-striped">
+					<thead>
+						<tr>
+						<th><a>id</a></th>
+						<th><a>reviewId</a></th>
+						<th><a>reviewFullText</a></th>
+						<th><a>reviewText</a></th>
+						<!-- <th><a>numLikes</a></th>
+						<th><a>numComments</a></th>
+						<th><a>numShares</a></th> -->
+						<th><a>rating</a></th>
+						<!-- <th><a>reviewCreatedOn</a></th> -->
+						<th><a>reviewCreatedOnDate</a></th>
+						<!-- <th><a>reviewCreatedOnTime</a></th>
+						<th><a>reviewerId</a></th>
+						<th><a>reviwerUrl</a></th>
+						<th><a>reviewerName</a></th>
+						<th><a>reviewerEmail</a></th>
+						<th><a>sourceType</a></th>
+						<th><a>isVerified</a></th>
+						<th><a>source</a></th>
+					    <th><a>sourceName</a></th>
+					    <th><a>sourceId</a></th>
+					    <th><a>href</a></th>
+				    	<th><a>logoHref</a></th> -->
+					
+					
+					
+					
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="rev : ${review}">
+						    <td th:text="${rev.id}"></td>
+							<td th:text="${rev.reviewId}"></td>
+							<td th:text="${rev.reviewFullText}"></td>
+							<td th:text="${rev.reviewText}"></td>
+							<td th:text="${rev.rating}"></td>
+							<td th:text="${rev.reviewCreatedOnDate}"></td>
+						
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			</div>
+		</div>
+		<br> <br>
+		
+	</div>
+
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+</body>
+
+<footer class="fixed-bottom">
+	<!-- Copyright -->
+	<div class="text-center bg-info text-dark p-3 foottext">&copy;
+		2022 Reviews</div>
+	<!-- Copyright -->
+</footer>
+
+
+</html>
